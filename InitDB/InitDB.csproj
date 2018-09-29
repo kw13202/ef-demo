@@ -59,6 +59,16 @@
     <Compile Include="Map\OrderMap.cs" />
     <Compile Include="Map\StudentContactMap.cs" />
     <Compile Include="Map\StudentMap.cs" />
+    <Compile Include="Map\StudentPhotoMap.cs" />
+    <Compile Include="Migrations\201809290208180_InitialCreate.cs" />
+    <Compile Include="Migrations\201809290208180_InitialCreate.Designer.cs">
+      <DependentUpon>201809290208180_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809290357260_V1001.cs" />
+    <Compile Include="Migrations\201809290357260_V1001.Designer.cs">
+      <DependentUpon>201809290357260_V1001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\BankAccount.cs" />
     <Compile Include="Model\BaseEntity.cs" />
@@ -71,6 +81,7 @@
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\StudentContact.cs" />
+    <Compile Include="Model\StudentPhoto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,6 +91,13 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201809290208180_InitialCreate.resx">
+      <DependentUpon>201809290208180_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809290357260_V1001.resx">
+      <DependentUpon>201809290357260_V1001.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using InitDB.Map;
+using InitDB.Migrations;
 using InitDB.Model;
 
 namespace InitDB
@@ -20,9 +21,12 @@ namespace InitDB
             //数据库不存在就创建
             //Database.SetInitializer(new CreateDatabaseIfNotExists<EfDbContext>());
             //总是创建无论是否存在
-            Database.SetInitializer(new DropCreateDatabaseAlways<EfDbContext>());
+            //Database.SetInitializer(new DropCreateDatabaseAlways<EfDbContext>());
             //数据库模型发生变化则删除重建
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<EfDbContext>());
+
+            //自动迁移
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<EfDbContext, Configuration>());
         }
 
         public DbSet<Blog> Blogs { get; set; }

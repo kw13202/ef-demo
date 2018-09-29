@@ -12,5 +12,6 @@ namespace InitDB.Model
         public byte Age { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
         public virtual StudentContact StudentContact { get; set; }
+        public virtual ICollection<StudentPhoto> StudentPhotos { get; set; }
     }
 }

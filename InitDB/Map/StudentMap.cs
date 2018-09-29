@@ -33,6 +33,7 @@ namespace InitDB.Map
                 x.ToTable("StudentCourses").MapLeftKey("StudentId").MapRightKey("CourseId"));
             //一对一关系，Student可能有StudentContact，但StudentContact必须有Student
             HasOptional(x => x.StudentContact).WithRequired(x => x.Student);
+            HasMany(x => x.StudentPhotos).WithRequired(x => x.Student);
 
 
         }
