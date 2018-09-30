@@ -27,6 +27,11 @@ namespace InitDB
 
             //自动迁移
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<EfDbContext, Configuration>());
+
+            //去除为空检查，生成简单的sql，少了很多判断，有利于查询
+            Configuration.UseDatabaseNullSemantics = false;
+
+            Database.Log = Console.WriteLine;
         }
 
         public DbSet<Blog> Blogs { get; set; }
