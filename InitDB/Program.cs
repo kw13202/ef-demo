@@ -21,7 +21,8 @@ namespace InitDB
                 //    Name = "Harry",
                 //    Url = "http://www.qq.com",
                 //});
-
+                int id = 1;
+                efDbContext.Blogs.Where(x => x.Id == id).ToListAsync();
 
                 ////多对多关系
                 //var student = new Student()
@@ -54,15 +55,15 @@ namespace InitDB
                 //};
                 //efDbContext.Students.Add(student);
 
-                var student = new Student()
-                {
-                    Id = 1,
-                    Name = "Harry",
-                    Age = 30
-                };
-                efDbContext.Entry(student).State = EntityState.Unchanged;
-                efDbContext.Entry(student).Property(x => x.Name).IsModified = true;
-                efDbContext.Entry(student).Property(x => x.Age).IsModified = true;
+                //var student = new Student()
+                //{
+                //    Id = 1,
+                //    Name = "Harry",
+                //    Age = 30
+                //};
+                //efDbContext.Entry(student).State = EntityState.Unchanged;
+                //efDbContext.Entry(student).Property(x => x.Name).IsModified = true;
+                //efDbContext.Entry(student).Property(x => x.Age).IsModified = true;
 
                 //使用第三方批量更新
                 efDbContext.Students.Where(x => x.Id > 1).Update(x => new Student() {Age = 66});

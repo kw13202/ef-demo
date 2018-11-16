@@ -39,6 +39,7 @@ namespace InitDB
         public DbSet<BillingDetail> BillingDetails { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<SQLProfiler> SQLProfilers { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

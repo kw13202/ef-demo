@@ -42,9 +42,17 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.10\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,10 +64,12 @@
     <Compile Include="Attributes\NonUnicode.cs" />
     <Compile Include="Convention\CustomKeyConvention.cs" />
     <Compile Include="Convention\DateTime2Convention.cs" />
+    <Compile Include="DbContextConfiguration.cs" />
     <Compile Include="EfDbContext.cs" />
     <Compile Include="Map\CourseMap.cs" />
     <Compile Include="Map\CustomerMap.cs" />
     <Compile Include="Map\OrderMap.cs" />
+    <Compile Include="Map\SQLProfilerMap.cs" />
     <Compile Include="Map\StudentContactMap.cs" />
     <Compile Include="Map\StudentMap.cs" />
     <Compile Include="Map\StudentPhotoMap.cs" />
@@ -70,6 +80,10 @@
     <Compile Include="Migrations\201809290357260_V1001.cs" />
     <Compile Include="Migrations\201809290357260_V1001.Designer.cs">
       <DependentUpon>201809290357260_V1001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811160828447_V1002.cs" />
+    <Compile Include="Migrations\201811160828447_V1002.Designer.cs">
+      <DependentUpon>201811160828447_V1002.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Address.cs" />
@@ -82,14 +96,23 @@
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\SQLProfiler.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\StudentContact.cs" />
     <Compile Include="Model\StudentPhoto.cs" />
+    <Compile Include="NLogInterceptor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -100,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809290357260_V1001.resx">
       <DependentUpon>201809290357260_V1001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811160828447_V1002.resx">
+      <DependentUpon>201811160828447_V1002.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
