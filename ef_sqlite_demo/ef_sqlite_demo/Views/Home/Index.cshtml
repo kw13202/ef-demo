@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ef_sqlite_demo.model.Post>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@(item.Id)</td>
+            <td>@(item.PostName)</td>
+            <td>
+                @foreach (var tag in item.PostTags.ToList())
+                {
+                    <span>@(tag.Tag.TagName)</span>
+                }
+            </td>
+            <td>@(item.CreateTime.ToString("yyyy-MM-dd HH:mm:ss"))</td>
+        </tr>
+        }
+    </table>
+
+</body>
+</html>
