@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "数据库连接和初始化策略", "数据库连接和初始化策略", "{8A179E04-C925-4D8E-A46F-84033A726099}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.数据库连接和初始化策略", "1.数据库连接和初始化策略", "{8A179E04-C925-4D8E-A46F-84033A726099}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InitDB", "InitDB\InitDB.csproj", "{7F46EDD5-865A-4B00-990E-0B08E2112E52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.事务", "2.事务", "{14E7D499-94EA-4F16-9EC7-02FD30120EDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbTransactionDemo", "DbTransactionDemo\DbTransactionDemo.csproj", "{A0967187-0FC1-4220-B50B-6D4B75DA85BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 		{7F46EDD5-865A-4B00-990E-0B08E2112E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F46EDD5-865A-4B00-990E-0B08E2112E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F46EDD5-865A-4B00-990E-0B08E2112E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0967187-0FC1-4220-B50B-6D4B75DA85BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0967187-0FC1-4220-B50B-6D4B75DA85BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0967187-0FC1-4220-B50B-6D4B75DA85BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0967187-0FC1-4220-B50B-6D4B75DA85BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7F46EDD5-865A-4B00-990E-0B08E2112E52} = {8A179E04-C925-4D8E-A46F-84033A726099}
+		{A0967187-0FC1-4220-B50B-6D4B75DA85BA} = {14E7D499-94EA-4F16-9EC7-02FD30120EDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72F24BA7-81DA-40A9-9F6C-0FD566BC2BD8}
